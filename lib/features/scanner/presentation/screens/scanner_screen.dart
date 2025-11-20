@@ -1,5 +1,7 @@
 import 'package:almonds/widgets/global/app_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../../domain/entities/product.dart';
@@ -16,19 +18,30 @@ class ScannerScreen extends StatefulWidget {
 class _ScannerScreenState extends State<ScannerScreen> {
   Product? _product;
   ProductUseCase useCase = ProductUseCase();
+  bool isScannerEnabled = true;
 
   Future<void> captureBarcode(result) async {
-    String barcode = result.barcodes.first.rawValue;
-    print(barcode);
+    if (isScannerEnabled) {
+      // Disable immediately to prevent multiple scans
+      isScannerEnabled = false;
 
-    var product = await useCase.getProduct(barcode);
+      final barcode = result.barcodes.first.rawValue;
 
-    // Check if widget is still mounted before calling setState
-    if (!mounted) return;
+      print(barcode);
 
-    setState(() {
-      _product = product;
-    });
+      final product = await useCase.getProduct(barcode);
+
+      await Haptics.vibrate(HapticsType.success);
+
+      setState(() {
+        _product = product;
+      });
+    } else {
+      print("Scanner has been disabled");
+    }
+
+    // // Check if widget is still mounted before calling setState
+    // if (!mounted) return;
   }
 
   @override
@@ -53,7 +66,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: AppNavigation(3),
+      bottomNavigationBar: AppNavigation(1),
     );
   }
 }

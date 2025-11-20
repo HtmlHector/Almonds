@@ -55,9 +55,27 @@ class _AppNavigationState extends State<AppNavigation> {
       unselectedIconTheme: IconThemeData(size: 24),
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Scan"),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "History"),
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Community"),
+        BottomNavigationBarItem(
+          icon: ImageIcon(
+            AssetImage(
+              widget.activeScreenIndex == 1
+                  ? 'assets/images/icons/barcodeblack.png'
+                  : 'assets/images/icons/barcodegray.png',
+            ),
+          ),
+          label: "Scan",
+        ),
+        BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),
+        BottomNavigationBarItem(
+          icon: ImageIcon(
+            AssetImage(
+              widget.activeScreenIndex == 3
+                  ? 'assets/images/icons/communityblack.png'
+                  : 'assets/images/icons/communitygray.png',
+            ),
+          ),
+          label: "Community",
+        ),
       ],
     );
   }

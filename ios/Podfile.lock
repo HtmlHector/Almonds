@@ -2,6 +2,8 @@ PODS:
   - app_links (6.4.1):
     - Flutter
   - Flutter (1.0.0)
+  - haptic_feedback (0.5.1):
+    - Flutter
   - mobile_scanner (7.0.0):
     - Flutter
     - FlutterMacOS
@@ -17,6 +19,7 @@ PODS:
 DEPENDENCIES:
   - app_links (from `.symlinks/plugins/app_links/ios`)
   - Flutter (from `Flutter`)
+  - haptic_feedback (from `.symlinks/plugins/haptic_feedback/ios`)
   - mobile_scanner (from `.symlinks/plugins/mobile_scanner/darwin`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
@@ -27,6 +30,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/app_links/ios"
   Flutter:
     :path: Flutter
+  haptic_feedback:
+    :path: ".symlinks/plugins/haptic_feedback/ios"
   mobile_scanner:
     :path: ".symlinks/plugins/mobile_scanner/darwin"
   path_provider_foundation:
@@ -39,6 +44,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   app_links: 3dbc685f76b1693c66a6d9dd1e9ab6f73d97dc0a
   Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  haptic_feedback: fd1d8509833f58f164fc12122c0357fa9b2750e0
   mobile_scanner: 9157936403f5a0644ca3779a38ff8404c5434a93
   path_provider_foundation: bb55f6dbba17d0dccd6737fe6f7f34fbd0376880
   shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb

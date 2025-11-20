@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:almonds/features/product_information/domain/description_viewmodel.dart';
 import 'package:almonds/features/product_information/presentation/widgets/categorization/negative_nutrients.dart';
 import 'package:almonds/features/product_information/presentation/widgets/categorization/positive_nutrients.dart';
 import 'package:almonds/features/product_information/presentation/widgets/nutritional_info/nutritional_info.dart';
@@ -7,6 +8,7 @@ import 'package:almonds/features/product_information/presentation/widgets/produc
 import 'package:almonds/features/scanner/domain/entities/product.dart';
 import 'package:almonds/widgets/global/app_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../widgets/description/product_description.dart';
 import '../widgets/nutrient_graph.dart';
 
@@ -31,44 +33,24 @@ class _ProductInformationScreenState extends State<ProductInformationScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    calories = (widget.product.nutrients["energy-kcal_100g"] as num).toDouble();
-    sodium = (widget.product.nutrients["salt_100g"] as num).toDouble();
-    sugar = (widget.product.nutrients["sugars_100g"] as num).toDouble();
-  }
+    context.read<DescriptionViewModel>().calories =
+        (widget.product.nutrients["energy-kcal_100g"] as num).toDouble();
 
-  void determineNutrientStatus() {}
+    context.read<DescriptionViewModel>().sodium =
+        (widget.product.nutrients["salt_100g"] as num).toDouble();
+
+    context.read<DescriptionViewModel>().sugar =
+        (widget.product.nutrients["sugars_100g"] as num).toDouble();
+
+    context.read<DescriptionViewModel>().protein =
+        (widget.product.nutrients["proteins_100g"] as num).toDouble();
+
+    context.read<DescriptionViewModel>().nutrimentChecker();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Determine which nutrients are healthy (green/light green) vs unhealthy (orange/red)
-    bool caloriesHealthy = NutrientGraph.isHealthy(calories);
-    bool sodiumHealthy = NutrientGraph.isHealthy(sodium);
-    bool sugarHealthy = NutrientGraph.isHealthy(sugar);
-
-    // Build lists of positive and negative nutrients
-    List<Widget> positiveNutrients = [];
-    List<Widget> negativeNutrients = [];
-
-    // Categorize calories
-    if (caloriesHealthy) {
-      positiveNutrients.add(NutrientGraph(title: "Calories", value: calories));
-    } else {
-      negativeNutrients.add(NutrientGraph(title: "Calories", value: calories));
-    }
-
-    // Categorize sodium
-    if (sodiumHealthy) {
-      positiveNutrients.add(NutrientGraph(title: "Salt", value: sodium));
-    } else {
-      negativeNutrients.add(NutrientGraph(title: "Salt", value: sodium));
-    }
-
-    // Categorize sodium
-    if (sugarHealthy) {
-      positiveNutrients.add(NutrientGraph(title: "Sugar", value: sugar));
-    } else {
-      negativeNutrients.add(NutrientGraph(title: "Sugar", value: sugar));
-    }
+    final viewModel = context.watch<DescriptionViewModel>();
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -82,10 +64,10 @@ class _ProductInformationScreenState extends State<ProductInformationScreen> {
               Column(
                 spacing: 30,
                 children: [
-                  if (negativeNutrients.isNotEmpty)
-                    NegativeNutrients(negativeNutrients),
-                  if (positiveNutrients.isNotEmpty)
-                    PositiveNutrients(positiveNutrients),
+                  if (viewModel.negativeNutrients.isNotEmpty)
+                    NegativeNutrients(viewModel.negativeNutrients),
+                  if (viewModel.positiveNutrients.isNotEmpty)
+                    PositiveNutrients(viewModel.positiveNutrients),
                 ],
               ),
             ],

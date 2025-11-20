@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../utilities/database.dart';
+import '../../../product_information/presentation/widgets/product_score.dart';
 
 class ProductPreview extends StatefulWidget {
   const ProductPreview({super.key, required this.product});
@@ -111,7 +112,7 @@ class _ProductPreviewState extends State<ProductPreview> {
                     color: Colors.black38,
                   ),
                 ),
-                // ProductScore(widget.product.score!),
+                ProductScore(widget.product.score!),
               ],
             ),
           ),
