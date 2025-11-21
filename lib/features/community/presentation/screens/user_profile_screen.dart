@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class UserProfileScreen extends StatefulWidget {
@@ -37,17 +38,13 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        backgroundColor: Colors.grey[100],
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemGroupedBackground,
+      navigationBar: const CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.systemGroupedBackground,
+        border: null,
       ),
-      body: SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -173,28 +170,25 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     final isSelected = selectedCategory == category;
                     return Padding(
                       padding: const EdgeInsets.only(right: 10),
-                      child: GestureDetector(
-                        onTap: () {
+                      child: CupertinoButton(
+                        onPressed: () {
                           setState(() {
                             selectedCategory = category;
                           });
                         },
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 12,
-                          ),
-                          decoration: BoxDecoration(
-                            color: isSelected ? Colors.black : Colors.white,
-                            borderRadius: BorderRadius.circular(24),
-                          ),
-                          child: Text(
-                            category,
-                            style: TextStyle(
-                              color: isSelected ? Colors.white : Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 12,
+                        ),
+                        color: isSelected ? CupertinoColors.black : CupertinoColors.white,
+                        borderRadius: BorderRadius.circular(24),
+                        minSize: 0,
+                        child: Text(
+                          category,
+                          style: TextStyle(
+                            color: isSelected ? CupertinoColors.white : CupertinoColors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),

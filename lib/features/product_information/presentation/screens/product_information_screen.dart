@@ -7,6 +7,7 @@ import 'package:almonds/features/product_information/presentation/widgets/nutrit
 import 'package:almonds/features/product_information/presentation/widgets/product_score.dart';
 import 'package:almonds/features/scanner/domain/entities/product.dart';
 import 'package:almonds/widgets/global/app_navigation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../widgets/description/product_description.dart';
@@ -31,7 +32,6 @@ class _ProductInformationScreenState extends State<ProductInformationScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     context.read<DescriptionViewModel>().calories =
         (widget.product.nutrients["energy-kcal_100g"] as num).toDouble();
@@ -52,9 +52,9 @@ class _ProductInformationScreenState extends State<ProductInformationScreen> {
   Widget build(BuildContext context) {
     final viewModel = context.watch<DescriptionViewModel>();
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemBackground,
+      child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: ListView(

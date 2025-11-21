@@ -4,6 +4,7 @@ import 'package:almonds/features/product_information/domain/description_viewmode
 import 'package:almonds/features/product_information/presentation/screens/product_information_screen.dart';
 import 'package:almonds/features/scanner/presentation/screens/scanner_screen.dart';
 import 'package:almonds/features/settings/presentation/screens/settings_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -33,7 +34,7 @@ Future<void> main() async {
           create: (_) => CommunityViewModel(),
         ),
       ],
-      child: const MyApp(), // MaterialApp moved inside MyApp
+      child: const MyApp(),
     ),
   );
 }
@@ -48,8 +49,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: theme,
+    return CupertinoApp(
+      theme: const CupertinoThemeData(
+        primaryColor: CupertinoColors.activeBlue,
+        scaffoldBackgroundColor: CupertinoColors.systemBackground,
+      ),
       home: HomeScreen(),
     );
   }

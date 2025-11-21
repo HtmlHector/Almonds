@@ -1,5 +1,6 @@
 import 'package:almonds/features/community/presentation/screens/community_screen.dart';
 import 'package:almonds/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -32,29 +33,25 @@ class _AppNavigationState extends State<AppNavigation> {
 
     Navigator.pushReplacement(
       context,
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => newScreen,
-        transitionDuration: Duration.zero,
-        reverseTransitionDuration: Duration.zero,
+      CupertinoPageRoute(
+        builder: (context) => newScreen,
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
+    return CupertinoTabBar(
       currentIndex: widget.activeScreenIndex,
-      backgroundColor: Colors.white,
-      type: BottomNavigationBarType.fixed,
+      backgroundColor: CupertinoColors.systemBackground,
       onTap: changeScreen,
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Color(0xFF4F4E5B),
-      selectedFontSize: 12,
-      unselectedFontSize: 12,
-      selectedIconTheme: IconThemeData(size: 24),
-      unselectedIconTheme: IconThemeData(size: 24),
+      activeColor: CupertinoColors.black,
+      inactiveColor: const Color(0xFF4F4E5B),
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+        const BottomNavigationBarItem(
+          icon: Icon(CupertinoIcons.home),
+          label: "Home",
+        ),
         BottomNavigationBarItem(
           icon: ImageIcon(
             AssetImage(
@@ -65,7 +62,10 @@ class _AppNavigationState extends State<AppNavigation> {
           ),
           label: "Scan",
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.history), label: "History"),
+        const BottomNavigationBarItem(
+          icon: Icon(CupertinoIcons.clock),
+          label: "History",
+        ),
         BottomNavigationBarItem(
           icon: ImageIcon(
             AssetImage(

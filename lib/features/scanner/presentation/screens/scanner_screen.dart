@@ -1,4 +1,5 @@
 import 'package:almonds/widgets/global/app_navigation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
@@ -33,21 +34,20 @@ class _ScannerScreenState extends State<ScannerScreen> {
 
       await Haptics.vibrate(HapticsType.success);
 
+      if (!mounted) return;
+
       setState(() {
         _product = product;
       });
     } else {
       print("Scanner has been disabled");
     }
-
-    // // Check if widget is still mounted before calling setState
-    // if (!mounted) return;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
+    return CupertinoPageScaffold(
+      child: Stack(
         children: [
           MobileScanner(
             onDetect: captureBarcode,
@@ -66,7 +66,6 @@ class _ScannerScreenState extends State<ScannerScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: AppNavigation(1),
     );
   }
 }

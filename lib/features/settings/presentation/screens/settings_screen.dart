@@ -13,7 +13,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String userEmail = "john.doe@example.com";
 
   void _showDeleteAccountDialog() {
-    showDialog(
+    showCupertinoDialog(
       context: context,
       builder: (context) => CupertinoAlertDialog(
         title: const Text('Delete Account'),
@@ -42,26 +42,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[50],
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: const Text(
-          'Settings',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemGroupedBackground,
+      navigationBar: const CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.systemBackground,
+        border: null,
+        middle: Text('Settings'),
       ),
-      body: SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           children: [
             // Profile Section
@@ -185,19 +173,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
+                child: CupertinoButton(
                   onPressed: _showDeleteAccountDialog,
-                  style: OutlinedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    side: const BorderSide(color: Colors.red, width: 1.5),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  color: CupertinoColors.systemBackground,
+                  borderRadius: BorderRadius.circular(12),
                   child: const Text(
                     'Delete Account',
                     style: TextStyle(
-                      color: Colors.red,
+                      color: CupertinoColors.destructiveRed,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),

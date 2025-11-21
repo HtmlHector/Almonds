@@ -2,6 +2,7 @@ import 'package:almonds/features/community/domain/entities/post.dart';
 import 'package:almonds/features/community/domain/viewmodel/community_viewmodel.dart';
 import 'package:almonds/features/community/presentation/widgets/post_card.dart';
 import 'package:almonds/widgets/global/app_navigation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,9 +14,10 @@ class CommunityScreen extends StatefulWidget {
 }
 
 class _CommunityScreenState extends State<CommunityScreen> {
+  int _selectedTab = 0;
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     context.read<CommunityViewModel>().getPosts();
   }
@@ -24,80 +26,77 @@ class _CommunityScreenState extends State<CommunityScreen> {
   Widget build(BuildContext context) {
     final viewModel = context.watch<CommunityViewModel>();
 
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(48),
-            child: Container(
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.grey.shade200,
-                    width: 1,
-                  ),
-                ),
-              ),
-              child: TabBar(
-                indicatorColor: Colors.black,
-                indicatorWeight: 2,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                labelStyle: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-                unselectedLabelStyle: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-                tabs: const [
-                  Tab(text: "Community", icon: Icon(Icons.list)),
-                  Tab(text: "Almonds", icon: Icon(Icons.person)),
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.systemGroupedBackground,
+      navigationBar: CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.systemBackground,
+        border: null,
+        middle: CupertinoSlidingSegmentedControl<int>(
+          groupValue: _selectedTab,
+          onValueChanged: (int? value) {
+            if (value != null) {
+              setState(() {
+                _selectedTab = value;
+              });
+            }
+          },
+          children: const {
+            0: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(CupertinoIcons.list_bullet, size: 18),
+                  SizedBox(width: 6),
+                  Text('Community'),
                 ],
               ),
             ),
-          ),
+            1: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(CupertinoIcons.person, size: 18),
+                  SizedBox(width: 6),
+                  Text('Almonds'),
+                ],
+              ),
+            ),
+          },
         ),
-        body: TabBarView(
-          children: [
-            // For You Tab
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: ListView(
-                children: [
-                  ...viewModel.posts.map((post) {
-                    return PostCard(
-                      post: post,
-                    );
-                  }).toList(),
-                ],
-              ),
-            ),
-            // Following Tab
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: ListView(
-                children: [
-                  PostCard(
-                    post: Post(
-                      id: 3,
-                      title: "Following Content",
-                      description:
-                          "Content from people you follow will appear here.",
-                      author: "John Smith",
-                      upvotes: 45,
+      ),
+      child: SafeArea(
+        child: _selectedTab == 0
+            ? Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: ListView(
+                  children: [
+                    ...viewModel.posts.map((post) {
+                      return PostCard(
+                        post: post,
+                      );
+                    }).toList(),
+                  ],
+                ),
+              )
+            : Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: ListView(
+                  children: [
+                    PostCard(
+                      post: Post(
+                        id: 3,
+                        title: "Following Content",
+                        description:
+                            "Content from people you follow will appear here.",
+                        author: "John Smith",
+                        upvotes: 45,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-        bottomNavigationBar: AppNavigation(3),
       ),
     );
   }
