@@ -1,0 +1,482 @@
+[
+ {
+  "name": "Red 40",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "A synthetic red dye used in candies, cereals, and drinks. Linked to hyperactivity and allergic reactions in sensitive individuals. Some studies suggest possible carcinogenic effects.",
+  "match": [
+   "red 40",
+   "e129",
+   "allura red"
+  ]
+ },
+ {
+  "name": "Yellow 5",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "Also called tartrazine, this dye is used in chips, snacks, and sodas. May trigger hyperactivity and allergic reactions in those sensitive to aspirin or benzoates.",
+  "match": [
+   "yellow 5",
+   "e102",
+   "tartrazine"
+  ]
+ },
+ {
+  "name": "Yellow 6",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "Also known as sunset yellow, used in candies, baked goods, and beverages. Linked in animal studies to adrenal and kidney problems.",
+  "match": [
+   "yellow 6",
+   "e110",
+   "sunset yellow"
+  ]
+ },
+ {
+  "name": "Blue 1",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "Bright blue coloring found in drinks, candy, and desserts. Some evidence suggests potential allergic and neurological effects.",
+  "match": [
+   "blue 1",
+   "e133",
+   "brilliant blue"
+  ]
+ },
+ {
+  "name": "Blue 2",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "Indigo carmine dye used in sweets and snacks. Linked in animal studies to possible brain tumors at high exposure levels.",
+  "match": [
+   "blue 2",
+   "e132",
+   "indigotine",
+   "indigo carmine"
+  ]
+ },
+ {
+  "name": "Green 3",
+  "category": "Artificial colour",
+  "severity": "moderate",
+  "description": "Synthetic green dye used in mint candies and snacks. Associated with bladder and thyroid effects in animal tests.",
+  "match": [
+   "green 3",
+   "e143",
+   "fast green"
+  ]
+ },
+ {
+  "name": "Red 3",
+  "category": "Artificial colour",
+  "severity": "high",
+  "description": "Erythrosine dye used in cherries and icings. Shown to cause thyroid tumors in animals and banned from cosmetics.",
+  "match": [
+   "red 3",
+   "e127",
+   "erythrosine"
+  ]
+ },
+ {
+  "name": "Aspartame",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Low-calorie sweetener found in diet snacks and drinks. Must be avoided by those with PKU. Linked to headaches and mood changes in sensitive individuals.",
+  "match": [
+   "aspartame",
+   "e951"
+  ]
+ },
+ {
+  "name": "Sucralose",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Artificial sweetener sold as Splenda. May disrupt gut bacteria and affect insulin response when consumed often.",
+  "match": [
+   "sucralose",
+   "e955"
+  ]
+ },
+ {
+  "name": "Saccharin",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Oldest artificial sweetener used in sugar-free gums and diet foods. Linked to bladder cancer in early studies, though considered safe in small amounts today.",
+  "match": [
+   "saccharin",
+   "e954"
+  ]
+ },
+ {
+  "name": "Acesulfame K",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Artificial sweetener often combined with aspartame or sucralose. May impact metabolism and gut bacteria based on some studies.",
+  "match": [
+   "acesulfame k",
+   "e950",
+   "acesulfame potassium",
+   "acesulfame-k"
+  ]
+ },
+ {
+  "name": "Neotame",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Powerful artificial sweetener similar to aspartame. Limited long-term data; may affect metabolism in high amounts.",
+  "match": [
+   "neotame",
+   "e961"
+  ]
+ },
+ {
+  "name": "Advantame",
+  "category": "Sweetener",
+  "severity": "low",
+  "description": "Newer sweetener derived from aspartame. Limited research but some concern about metabolic side effects.",
+  "match": [
+   "advantame",
+   "e969"
+  ]
+ },
+ {
+  "name": "Sodium Nitrite",
+  "category": "Preservative",
+  "severity": "high",
+  "description": "Used to preserve meats like bacon and sausages. Can form nitrosamines, carcinogenic compounds when cooked at high heat.",
+  "match": [
+   "sodium nitrite",
+   "e250"
+  ]
+ },
+ {
+  "name": "Sodium Nitrate",
+  "category": "Preservative",
+  "severity": "high",
+  "description": "Preservative and color stabilizer in cured meats. Linked to increased colorectal cancer risk.",
+  "match": [
+   "sodium nitrate",
+   "e251"
+  ]
+ },
+ {
+  "name": "Sodium Benzoate",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Used in sodas and acidic foods. When mixed with vitamin C, can form benzene, a known carcinogen.",
+  "match": [
+   "sodium benzoate",
+   "e211"
+  ]
+ },
+ {
+  "name": "Potassium Sorbate",
+  "category": "Preservative",
+  "severity": "low",
+  "description": "Mold-preventing preservative in cheeses and baked goods. May cause skin irritation in sensitive people.",
+  "match": [
+   "potassium sorbate",
+   "e202"
+  ]
+ },
+ {
+  "name": "BHA",
+  "category": "Preservative",
+  "severity": "high",
+  "description": "Butylated hydroxyanisole, a fat preservative found in chips and cereals. Classified as a possible human carcinogen.",
+  "match": [
+   "bha",
+   "e320",
+   "butylated hydroxyanisole"
+  ]
+ },
+ {
+  "name": "BHT",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Butylated hydroxytoluene, used with BHA to prevent rancidity. May disrupt hormones and cause organ effects in animals.",
+  "match": [
+   "bht",
+   "e321",
+   "butylated hydroxytoluene"
+  ]
+ },
+ {
+  "name": "Propyl Gallate",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Used in oils and processed foods to prevent spoilage. May cause allergic reactions and hormone disruption.",
+  "match": [
+   "propyl gallate",
+   "e310"
+  ]
+ },
+ {
+  "name": "Sodium Metabisulfite",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Preservative in dried fruits, wines, and snack seasonings. Can cause asthma or allergic reactions.",
+  "match": [
+   "sodium metabisulfite",
+   "e223",
+   "sodium metabisulphite"
+  ]
+ },
+ {
+  "name": "Calcium Propionate",
+  "category": "Preservative",
+  "severity": "low",
+  "description": "Mold inhibitor in bread and bakery products. Linked to hyperactivity and migraines in some people.",
+  "match": [
+   "calcium propionate",
+   "e282"
+  ]
+ },
+ {
+  "name": "Sodium Erythorbate",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Used with nitrites in meats. High intake can strain kidneys and cause metabolic imbalance.",
+  "match": [
+   "sodium erythorbate",
+   "e316"
+  ]
+ },
+ {
+  "name": "Monosodium Glutamate",
+  "category": "Flavour enhancer",
+  "severity": "moderate",
+  "description": "Flavor enhancer in soups, noodles, and chips. Some report headaches or flushing after high intake.",
+  "match": [
+   "monosodium glutamate",
+   "e621",
+   "msg"
+  ]
+ },
+ {
+  "name": "Disodium Inosinate",
+  "category": "Flavour enhancer",
+  "severity": "low",
+  "description": "Flavor enhancer often paired with MSG. Can cause mild throat irritation in sensitive individuals.",
+  "match": [
+   "disodium inosinate",
+   "e631"
+  ]
+ },
+ {
+  "name": "Disodium Guanylate",
+  "category": "Flavour enhancer",
+  "severity": "low",
+  "description": "Used with MSG to intensify savory flavors. May cause allergic reactions or sensitivity in some.",
+  "match": [
+   "disodium guanylate",
+   "e627"
+  ]
+ },
+ {
+  "name": "Hydrolyzed Vegetable Protein",
+  "category": "Flavour enhancer",
+  "severity": "moderate",
+  "description": "Flavor additive containing free glutamates similar to MSG. Can cause headaches or allergic responses in sensitive individuals.",
+  "match": [
+   "hydrolyzed vegetable protein"
+  ]
+ },
+ {
+  "name": "Partially Hydrogenated Oil",
+  "category": "Unhealthy fat",
+  "severity": "high",
+  "description": "Main source of trans fats in processed foods. Raises bad cholesterol and lowers good cholesterol, contributing to heart disease.",
+  "match": [
+   "partially hydrogenated oil",
+   "partially hydrogenated",
+   "hydrogenated vegetable oil",
+   "hydrogenated oil"
+  ]
+ },
+ {
+  "name": "Refined Palm Oil",
+  "category": "Unhealthy fat",
+  "severity": "low",
+  "description": "Cheap oil used in baked goods and chips. Overheating produces oxidation compounds harmful to heart health.",
+  "match": [
+   "refined palm oil"
+  ]
+ },
+ {
+  "name": "Interesterified Fat",
+  "category": "Unhealthy fat",
+  "severity": "moderate",
+  "description": "Modified fat used as a trans-fat substitute. Can disrupt insulin sensitivity and lipid metabolism.",
+  "match": [
+   "interesterified fat",
+   "interesterified"
+  ]
+ },
+ {
+  "name": "Artificial Flavoring",
+  "category": "Flavour enhancer",
+  "severity": "moderate",
+  "description": "Synthetic chemicals used to mimic natural flavors. Can trigger allergies and digestive irritation in some individuals.",
+  "match": [
+   "artificial flavoring",
+   "artificial flavour",
+   "artificial flavors",
+   "artificial flavours"
+  ]
+ },
+ {
+  "name": "High Fructose Corn Syrup",
+  "category": "Sweetener",
+  "severity": "moderate",
+  "description": "Sweetener in sodas and processed snacks. Overconsumption leads to insulin resistance, obesity, and liver fat buildup.",
+  "match": [
+   "high fructose corn syrup",
+   "glucose-fructose syrup",
+   "glucose fructose syrup",
+   "isoglucose"
+  ]
+ },
+ {
+  "name": "Maltodextrin",
+  "category": "Sweetener",
+  "severity": "low",
+  "description": "Highly processed carbohydrate filler. Rapidly spikes blood sugar and can disrupt gut health.",
+  "match": [
+   "maltodextrin"
+  ]
+ },
+ {
+  "name": "Titanium Dioxide",
+  "category": "Artificial colour",
+  "severity": "high",
+  "description": "Whitening agent used in candies and sauces. Classified as possibly carcinogenic and may cause DNA damage in large amounts.",
+  "match": [
+   "titanium dioxide",
+   "e171"
+  ]
+ },
+ {
+  "name": "Carrageenan",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Thickener from seaweed used in dairy and vegan foods. Degraded forms can cause gut inflammation.",
+  "match": [
+   "carrageenan",
+   "e407"
+  ]
+ },
+ {
+  "name": "Polysorbate 80",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Emulsifier in ice cream and sauces. Linked to gut barrier disruption and fertility issues in animal studies.",
+  "match": [
+   "polysorbate 80",
+   "e433",
+   "polysorbate"
+  ]
+ },
+ {
+  "name": "Propylene Glycol",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Used to retain moisture in snacks. Overexposure can irritate skin and may be toxic in large quantities.",
+  "match": [
+   "propylene glycol",
+   "e1520"
+  ]
+ },
+ {
+  "name": "Sodium Phosphate",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Used in processed meats and baked snacks. High intake burdens kidneys and affects calcium levels.",
+  "match": [
+   "sodium phosphate",
+   "e339"
+  ]
+ },
+ {
+  "name": "Potassium Bromate",
+  "category": "Additive",
+  "severity": "high",
+  "description": "Dough conditioner used in breads. Classified as a possible human carcinogen; banned in several countries.",
+  "match": [
+   "potassium bromate",
+   "e924"
+  ]
+ },
+ {
+  "name": "Aluminum Sulfate",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Used in baking powders and processed cheese. Excess aluminum exposure can affect brain and bone health.",
+  "match": [
+   "aluminum sulfate",
+   "e520",
+   "aluminium sulphate",
+   "aluminium sulfate"
+  ]
+ },
+ {
+  "name": "Sodium Aluminum Phosphate",
+  "category": "Additive",
+  "severity": "moderate",
+  "description": "Leavening agent in baked products. Contributes to aluminum accumulation when consumed frequently.",
+  "match": [
+   "sodium aluminum phosphate",
+   "e541"
+  ]
+ },
+ {
+  "name": "Sodium Hexametaphosphate",
+  "category": "Additive",
+  "severity": "low",
+  "description": "Used to prevent discoloration in foods. Long-term consumption can deplete calcium and essential minerals.",
+  "match": [
+   "sodium hexametaphosphate",
+   "e452"
+  ]
+ },
+ {
+  "name": "Azodicarbonamide",
+  "category": "Additive",
+  "severity": "high",
+  "description": "Flour bleaching and dough-improving agent. Breaks down into potentially harmful compounds and is banned in many countries.",
+  "match": [
+   "azodicarbonamide",
+   "e927a"
+  ]
+ },
+ {
+  "name": "Propylene Glycol Alginate",
+  "category": "Additive",
+  "severity": "low",
+  "description": "Thickener used in salad dressings and desserts. Large doses may affect liver and kidney function.",
+  "match": [
+   "propylene glycol alginate",
+   "e405"
+  ]
+ },
+ {
+  "name": "Calcium Disodium Edta",
+  "category": "Preservative",
+  "severity": "moderate",
+  "description": "Preservative and stabilizer in dressings and canned foods. Excess use may deplete essential minerals like zinc and iron.",
+  "match": [
+   "calcium disodium edta",
+   "e385"
+  ]
+ },
+ {
+  "name": "Sodium Stearoyl Lactylate",
+  "category": "Additive",
+  "severity": "low",
+  "description": "Emulsifier used in baked goods. May cause digestive irritation when consumed frequently.",
+  "match": [
+   "sodium stearoyl lactylate",
+   "e481"
+  ]
+ }
+]
